@@ -2,7 +2,7 @@
 //  SceneDelegate.swift
 //  Bull's Eyes Game
 //
-//  Created by User-P2 on 4/1/23.
+//  Created by Rexmoon on 4/1/23.
 //
 
 import UIKit
