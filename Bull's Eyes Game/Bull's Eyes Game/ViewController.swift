@@ -8,6 +8,8 @@
 import UIKit
 
 final class ViewController: UIViewController {
+    // MARK: - Properties
+    private var currentSliderValue: Int = 50
 
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -16,15 +18,20 @@ final class ViewController: UIViewController {
     
     // MARK: - IBActions
     @IBAction private func showAlert() {
-        let alertController = UIAlertController(title: "Controller Title",
-                                      message: "Controller Message",
+        let message = "The Slider value is \(currentSliderValue)"
+        let alertController = UIAlertController(title: "Success",
+                                      message: message,
                                       preferredStyle: .alert)
         
-        let alertAction = UIAlertAction(title: "Action Title",
-                                        style: .cancel,
+        let alertAction = UIAlertAction(title: "Ok",
+                                        style: .default,
                                         handler: nil)
         
         alertController.addAction(alertAction)
         present(alertController, animated: true, completion: nil)
+    }
+    
+    @IBAction private func movedSlider(_ slider: UISlider) {
+        currentSliderValue = lroundf(slider.value)
     }
 }
