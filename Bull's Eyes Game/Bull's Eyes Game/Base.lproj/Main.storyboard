@@ -107,6 +107,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="roundLabel" destination="9pc-uN-Bgw" id="PGx-hA-M7p"/>
+                        <outlet property="scoreLabel" destination="JOj-kc-8aj" id="vJh-0r-nqv"/>
                         <outlet property="slider" destination="FJS-ee-4qJ" id="dKW-Kj-rr1"/>
                         <outlet property="targetLabel" destination="wBi-vG-Lci" id="7nY-Xg-3Gq"/>
                     </connections>

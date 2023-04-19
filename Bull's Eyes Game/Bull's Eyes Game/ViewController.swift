@@ -11,10 +11,14 @@ final class ViewController: UIViewController {
     // MARK: - IBOutlets
     @IBOutlet private var slider: UISlider!
     @IBOutlet private var targetLabel: UILabel!
+    @IBOutlet private var scoreLabel: UILabel!
+    @IBOutlet private var roundLabel: UILabel!
     
     // MARK: - Properties
     private var currentSliderValue: Int = 0
     private var targetValue: Int = 0
+    private var score: Int = 0
+    private var round: Int = 0
 
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -24,23 +28,31 @@ final class ViewController: UIViewController {
     
     // MARK: - IBActions
     @IBAction private func showAlert() {
-        var difference: Int
+        let difference: Int = abs(currentSliderValue - targetValue)
+        let points: Int = 100 - difference
         
-        if currentSliderValue > targetValue {
-            difference = currentSliderValue - targetValue
-        } else if targetValue > currentSliderValue {
-            difference = targetValue - currentSliderValue
-        } else {
-            difference = 0
-        }
+        score += points
+        round += 1
         
         let message = """
             The value of slider is \(currentSliderValue)
-            The target value os: \(targetValue)
+            The target value is: \(targetValue)
             The difference is: \(difference)
+            You scored \(points) points
         """
         
-        let alertController = UIAlertController(title: "Success",
+        var title: String {
+            switch difference {
+                case 0:
+                    score += 100
+                    return "Perfect 100 additional points!"
+                case 1..<10: return "You almost had it!"
+                case 10..<15: return "Pretty good"
+                default: return "Not even close!"
+            }
+        }
+        
+        let alertController = UIAlertController(title: title,
                                       message: message,
                                       preferredStyle: .alert)
         
@@ -67,5 +79,7 @@ final class ViewController: UIViewController {
     
     private func updateLabels() {
         targetLabel.text = "\(targetValue)"
+        scoreLabel.text = "\(score)"
+        roundLabel.text = "\(round)"
     }
 }
