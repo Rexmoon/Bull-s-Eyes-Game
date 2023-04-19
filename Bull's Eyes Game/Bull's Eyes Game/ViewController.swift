@@ -8,7 +8,7 @@
 import UIKit
 
 final class ViewController: UIViewController {
-    // MARK: - IBOtlets
+    // MARK: - IBOutlets
     @IBOutlet private var slider: UISlider!
     @IBOutlet private var targetLabel: UILabel!
     
@@ -24,9 +24,20 @@ final class ViewController: UIViewController {
     
     // MARK: - IBActions
     @IBAction private func showAlert() {
+        var difference: Int
+        
+        if currentSliderValue > targetValue {
+            difference = currentSliderValue - targetValue
+        } else if targetValue > currentSliderValue {
+            difference = targetValue - currentSliderValue
+        } else {
+            difference = 0
+        }
+        
         let message = """
             The value of slider is \(currentSliderValue)
             The target value os: \(targetValue)
+            The difference is: \(difference)
         """
         
         let alertController = UIAlertController(title: "Success",
