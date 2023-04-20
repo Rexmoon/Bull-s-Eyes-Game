@@ -24,6 +24,42 @@ final class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         startNewGameAction()
+        setUpSlider()
+    }
+    
+    // MARK: - Functions
+    private func startNewRound() {
+        targetValue = Int.random(in: 1...100)
+        currentSliderValue = 50
+        slider.value = Float(currentSliderValue)
+        updateLabels()
+    }
+    
+    private func updateLabels() {
+        targetLabel.text = "\(targetValue)"
+        scoreLabel.text = "\(score)"
+        roundLabel.text = "\(rounds)"
+    }
+    
+    private func setUpSlider() {
+        guard let thumbImageNormal = UIImage(named: "SliderThumb-Normal"),
+              let thumbImageNormalHighlighted = UIImage(named: "SliderThumb-Highlighted"),
+              let trackLeftImage = UIImage(named: "SliderTrackLeft"),
+              let trackRigthImage = UIImage(named: "SliderTrackRight") else { return }
+        
+        let insets = UIEdgeInsets(top: 0,
+                                  left: 10,
+                                  bottom: 0,
+                                  right: 10)
+        
+        let trackLeftResizable = trackLeftImage.resizableImage(withCapInsets: insets)
+        let trackRigthResizable = trackRigthImage.resizableImage(withCapInsets: insets)
+        
+        slider.setThumbImage(thumbImageNormal, for: .normal)
+        slider.setThumbImage(thumbImageNormalHighlighted, for: .highlighted)
+        
+        slider.setMinimumTrackImage(trackLeftResizable, for: .normal)
+        slider.setMaximumTrackImage(trackRigthResizable, for: .normal)
     }
     
     // MARK: - IBActions
@@ -73,19 +109,5 @@ final class ViewController: UIViewController {
         rounds = 0
         score = 0
         startNewRound()
-    }
-    
-    // MARK: - Functions
-    private func startNewRound() {
-        targetValue = Int.random(in: 1...100)
-        currentSliderValue = 50
-        slider.value = Float(currentSliderValue)
-        updateLabels()
-    }
-    
-    private func updateLabels() {
-        targetLabel.text = "\(targetValue)"
-        scoreLabel.text = "\(score)"
-        roundLabel.text = "\(rounds)"
     }
 }
