@@ -45,7 +45,7 @@ final class ViewController: UIViewController {
         guard let thumbImageNormal = UIImage(named: "SliderThumb-Normal"),
               let thumbImageNormalHighlighted = UIImage(named: "SliderThumb-Highlighted"),
               let trackLeftImage = UIImage(named: "SliderTrackLeft"),
-              let trackRigthImage = UIImage(named: "SliderTrackRight") else { return }
+              let trackRightImage = UIImage(named: "SliderTrackRight") else { return }
         
         let insets = UIEdgeInsets(top: 0,
                                   left: 10,
@@ -53,13 +53,12 @@ final class ViewController: UIViewController {
                                   right: 10)
         
         let trackLeftResizable = trackLeftImage.resizableImage(withCapInsets: insets)
-        let trackRigthResizable = trackRigthImage.resizableImage(withCapInsets: insets)
+        let trackRightResizable = trackRightImage.resizableImage(withCapInsets: insets)
         
         slider.setThumbImage(thumbImageNormal, for: .normal)
         slider.setThumbImage(thumbImageNormalHighlighted, for: .highlighted)
-        
-        slider.setMinimumTrackImage(trackLeftResizable, for: .normal)
-        slider.setMaximumTrackImage(trackRigthResizable, for: .normal)
+        slider.setMinimumTrackImage(trackLeftImage, for: .normal)
+        slider.setMaximumTrackImage(trackRightImage, for: .normal)
     }
     
     // MARK: - IBActions
