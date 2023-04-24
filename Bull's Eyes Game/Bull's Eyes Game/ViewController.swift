@@ -57,8 +57,8 @@ final class ViewController: UIViewController {
         
         slider.setThumbImage(thumbImageNormal, for: .normal)
         slider.setThumbImage(thumbImageNormalHighlighted, for: .highlighted)
-        slider.setMinimumTrackImage(trackLeftImage, for: .normal)
-        slider.setMaximumTrackImage(trackRightImage, for: .normal)
+        slider.setMinimumTrackImage(trackLeftResizable, for: .normal)
+        slider.setMaximumTrackImage(trackRightResizable, for: .normal)
     }
     
     // MARK: - IBActions
@@ -108,5 +108,12 @@ final class ViewController: UIViewController {
         rounds = 0
         score = 0
         startNewRound()
+        
+        let transition = CATransition()
+        transition.type = .fade
+        transition.duration = 1
+        transition.timingFunction = CAMediaTimingFunction(
+            name: CAMediaTimingFunctionName.easeOut)
+        view.layer.add(transition, forKey: nil)
     }
 }
