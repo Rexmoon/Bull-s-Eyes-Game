@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		26DBF18229F1C55D00193406 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DBF18129F1C55D00193406 /* AboutViewController.swift */; };
+		26DBF18429F1CFC300193406 /* about.html in Resources */ = {isa = PBXBuildFile; fileRef = 26DBF18329F1CFC300193406 /* about.html */; };
 		26FECCDA29D8952D00D8F2A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FECCD929D8952D00D8F2A8 /* AppDelegate.swift */; };
 		26FECCDC29D8952D00D8F2A8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FECCDB29D8952D00D8F2A8 /* SceneDelegate.swift */; };
 		26FECCDE29D8952D00D8F2A8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FECCDD29D8952D00D8F2A8 /* ViewController.swift */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		26DBF18129F1C55D00193406 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		26DBF18329F1CFC300193406 /* about.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = about.html; sourceTree = "<group>"; };
 		26FECCD629D8952D00D8F2A8 /* Bull's Eyes Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bull's Eyes Game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		26FECCD929D8952D00D8F2A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		26FECCDB29D8952D00D8F2A8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,9 +60,11 @@
 		26FECCD829D8952D00D8F2A8 /* Bull's Eyes Game */ = {
 			isa = PBXGroup;
 			children = (
+				26DBF18329F1CFC300193406 /* about.html */,
 				26FECCD929D8952D00D8F2A8 /* AppDelegate.swift */,
 				26FECCDB29D8952D00D8F2A8 /* SceneDelegate.swift */,
 				26FECCDD29D8952D00D8F2A8 /* ViewController.swift */,
+				26DBF18129F1C55D00193406 /* AboutViewController.swift */,
 				26FECCDF29D8952D00D8F2A8 /* Main.storyboard */,
 				26FECCE229D8952E00D8F2A8 /* Assets.xcassets */,
 				26FECCE429D8952E00D8F2A8 /* LaunchScreen.storyboard */,
@@ -125,6 +131,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26DBF18429F1CFC300193406 /* about.html in Resources */,
 				26FECCE629D8952E00D8F2A8 /* LaunchScreen.storyboard in Resources */,
 				26FECCE329D8952E00D8F2A8 /* Assets.xcassets in Resources */,
 				26FECCE129D8952D00D8F2A8 /* Main.storyboard in Resources */,
@@ -140,6 +147,7 @@
 			files = (
 				26FECCDE29D8952D00D8F2A8 /* ViewController.swift in Sources */,
 				26FECCDA29D8952D00D8F2A8 /* AppDelegate.swift in Sources */,
+				26DBF18229F1C55D00193406 /* AboutViewController.swift in Sources */,
 				26FECCDC29D8952D00D8F2A8 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -285,15 +293,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Bull's Eyes Game/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Monkey Face";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.kids-games";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -301,6 +314,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.luna.practice.Bull-s-Eyes-Game";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -312,15 +328,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Bull's Eyes Game/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Monkey Face";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.kids-games";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -328,6 +349,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.luna.practice.Bull-s-Eyes-Game";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
